@@ -8,28 +8,25 @@
 </head>
 <body>
   <script>
-    function makePhrases(){
-      var name=[
-      '陈泽宇','杨克琴','郭懿婷','陈欣楚','杨心怡','吴倩雯','龚佳怡','李可新','陆心怡',
-      '张璐','潘梦情','田金丰','葛梦蝶','刘祎婷','沈宇峰','王达','李一鸣','徐志豪','孙睿褀','徐杨',
-      '濮徐杰','陈卓豪','王昱','林超凡','孔易飞','王诚礼','杨凤旗','王韫韬','吴策','顾强','顾强','薛宇成',
-      '俞浩','陈李鹏','徐超','顾伟豪','王钦鹏','孙权','潘铖','朱铭杨','张程','杨吉']
-      var time=[
-      '早上8点','中午12点','晚上10点','凌晨2点','半夜三更']
-      var place=[
-      '在食堂','在宿舍','在路上','在操场','在床上']
-      var activity=[
-      '吃饭','看书','喝水','睡觉','上厕所','打游戏']
-      var rand1=Math.floor(Math.random()*name.length);
-      var rand2=Math.floor(Math.random()*time.length);
-      var rand3=Math.floor(Math.random()*place.length);
-      var rand4=Math.floor(Math.random()*activity.length);
+    window.onload = function() {
+      function makePhrases() {
+        var name = ['陈泽宇','杨克琴','郭懿婷','陈欣楚','杨心怡','吴倩雯','龚佳怡','李可新','陆心怡',
+        '张璐','潘梦情','田金丰','葛梦蝶','刘祎婷','沈宇峰','王达','李一鸣','徐志豪','孙睿褀','徐杨',
+        '濮徐杰','陈卓豪','王昱','林超凡','孔易飞','王诚礼','杨凤旗','王韫韬','吴策','顾强','顾强','薛宇成',
+        '俞浩','陈李鹏','徐超','顾伟豪','王钦鹏','孙权','潘铖','朱铭杨','张程','杨吉']
+        var time = ['早上8点','中午12点','晚上10点','凌晨2点','半夜三更','昨天','前天']
+        var place = ['在食堂','在宿舍','在路上','在操场','在床上','在家里','在浴室','在超市']
+        var activity = ['吃饭','看书','喝水','睡觉','打游戏','洗澡','梳头']
 
-      var phrase = name[rand1] + "" + time[rand2] + "" + place[rand3] + "" + activity[rand4];
-      alert(phrase);
+        var phrase = chooseRandStrInArray(name) + "" + chooseRandStrInArray(time) + "" + chooseRandStrInArray(place) + "" + chooseRandStrInArray(activity)
+        document.write(phrase)
+
+        function chooseRandStrInArray(array){
+          return array[Math.floor(Math.random() * array.length)]
+        }
+      }
+      makePhrases();
     }
-    makePhrases();
-    
   </script>
 </body>
 </html>
